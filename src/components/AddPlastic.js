@@ -6,19 +6,22 @@ import {useSelector, useDispatch} from 'react-redux'
 
 const AddPlastic = () => {
 
-
-    const [plastic, setPlastic] = useState('this is WRonG') // need to remove this, change all functions on this pate
+    const blankPlastic = {id: null, plasticName: '', usage: null, occasion: null, typeOfPlastic: null} 
+    const [plastic, setPlastic] = useState(blankPlastic)
 
     const dispatch = useDispatch()
     const {addPlastic} = bindActionCreators(actionCreators, dispatch)
 
-    const wirSchauennn = useSelector((state) => state)
-    console.log(wirSchauennn)
+    const store = useSelector((state) => state)
+    console.log("this is the permanent store: ", store.plastic)
 
     const handleSubmit = e => {
         e.preventDefault()
         //add the reduxy part here 
         // check laater if handlesubmti can be moved to the form, ad just the redux part stays here to be passed down. idk
+        const {name, value} = e.target;
+
+        addPlastic({...plastic, [name]: value, id: store.plastic.plastic.length+1})
     }
 
     const handleChange = e => {

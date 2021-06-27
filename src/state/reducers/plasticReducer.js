@@ -1,6 +1,5 @@
-const blankPlastic = {id: null, plasticName: '', type: null, timeOfDay: ''} 
 
-const reducer = (state = blankPlastic, action) => {
+const reducer = (state = {plastic: []}, action) => {
     switch(action.type){
         case "addPlastic":
             return {plastic: [...state.plastic, action.payload]};
