@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import PlasticForm from "./PlasticForm";
 
 const EditPlastic = () => {
+
+
+
+    
     return (
         <div>
-            edit
+            <h1>edit</h1>
         </div>
     )
 }
