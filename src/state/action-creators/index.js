@@ -8,3 +8,12 @@ export const addPlastic = plastic => {
         })
     }
 }
+
+export const editPlastic = plastic => {
+    return dispatch => {
+        dispatch({
+            type: "editPlastic",
+            payload: plastic
+        })
+    }
+}
