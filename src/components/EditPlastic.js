@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
 import { useSelector, useDispatch } from "react-redux";
 
-const EditPlastic = ({plasticToEdit}) => {
+const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
 
     const dispatch = useDispatch();
     const { editPlastic } = bindActionCreators(actionCreators, dispatch);
@@ -14,7 +14,7 @@ const EditPlastic = ({plasticToEdit}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-
+        setEditEnabled(false)
         editPlastic() // ???
     }
 

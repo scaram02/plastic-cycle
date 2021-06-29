@@ -16,9 +16,10 @@ const App = () => {
   };
 
   const [plastic, setPlastic] = useState(blankPlastic)
+  const [editEnabled, setEditEnabled] = useState(false)
 
   const toggleEdit = plasticId => {
-
+    setEditEnabled(!editEnabled)
     setPlastic(plasticId)
     
   }
@@ -27,7 +28,7 @@ console.log('hmm,', plastic)
   return (
     <div className="App">
       <AddPlastic blankPlastic={blankPlastic}/>
-      <EditPlastic plasticToEdit={plastic}/>
+      <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled}/>
       <PlasticList toggleEdit={toggleEdit}/>
     </div>
   );
