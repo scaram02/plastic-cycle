@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
 import { useSelector, useDispatch } from "react-redux";
 
+
 const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
 
     const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
         e.preventDefault()
         setEditEnabled(false)
         editPlastic() // ???
+
+        //setThePlastic?
     }
 
     const handleChange = e => {
@@ -27,6 +30,7 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
     return (
         <div>
             <h1>edit</h1>
+            <PlasticForm plastic={plasticToEdit} handleSubmit={handleSubmit} handleChange={handleChange}/>
         </div>
     )
 }
