@@ -38,6 +38,7 @@ const AddPlastic = ({blankPlastic}) => {
         plastic={plastic}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        setPlastic={setPlastic}
       />
     </div>
   );

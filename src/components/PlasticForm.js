@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const PlasticForm = ({ plastic, handleSubmit, handleChange }) => {
+const PlasticForm = ({ plastic, handleSubmit, handleChange, setPlastic }) => {
+
+console.log("plastic to edit", plastic)
+
+useEffect(() => {
+  setPlastic(plastic)
+}, [])
+
   return (
     <div>
       <form onSubmit={handleSubmit}>

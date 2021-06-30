@@ -19,9 +19,9 @@ const App = () => {
   const [plastic, setPlastic] = useState(blankPlastic)
   const [editEnabled, setEditEnabled] = useState(false)
 
-  const toggleEdit = plasticId => {
+  const toggleEdit = plastic => {
     setEditEnabled(!editEnabled)
-    setPlastic(plasticId)
+    setPlastic(plastic)
     
   }
 console.log('hmm,', plastic)

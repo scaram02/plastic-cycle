@@ -25,12 +25,13 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
         const { name, value } = e.target;
 
         // somethign mroe here
+        setThePlastic({...thePlastic, [name]: value})
     }
 
     return (
         <div>
             <h1>edit</h1>
-            <PlasticForm plastic={plasticToEdit} handleSubmit={handleSubmit} handleChange={handleChange}/>
+            <PlasticForm plastic={plasticToEdit} handleSubmit={handleSubmit} handleChange={handleChange} setPlastic={setThePlastic}/>
         </div>
     )
 }

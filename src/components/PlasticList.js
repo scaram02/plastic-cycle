@@ -17,7 +17,7 @@ const PlasticList = ({toggleEdit}) => {
                     <div key={plastic.id}>
                     <h2>name: {plastic.plasticName}</h2>
                     <p>type: {plastic.typeOfPlastic}</p>
-                    <button onClick={() => toggleEdit(plastic.id)}>Edit</button>
+                    <button onClick={() => toggleEdit(plastic)}>Edit</button>
                     </div>
                 ))}
 
