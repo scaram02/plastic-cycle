@@ -12,26 +12,40 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
     const store = useSelector((state) => state);
 
     const  [thePlastic, setThePlastic] = useState(plasticToEdit)
+    
+    
+    useEffect(() => {
+        setThePlastic(plasticToEdit)
+    }, [])
+
 
     const handleSubmit = e => {
         e.preventDefault()
         setEditEnabled(false)
-        editPlastic() // ???
+
+
+        editPlastic(thePlastic, thePlastic.id) // ???
 
         //setThePlastic?
     }
 
     const handleChange = e => {
         const { name, value } = e.target;
-
+      console.log('gret value', value)
         // somethign mroe here
         setThePlastic({...thePlastic, [name]: value})
     }
 
+    console.log("the  plastic ur gonna edit", thePlastic)
+
     return (
         <div>
             <h1>edit</h1>
-            <PlasticForm plastic={plasticToEdit} handleSubmit={handleSubmit} handleChange={handleChange} setPlastic={setThePlastic}/>
+            <PlasticForm 
+            plastic={thePlastic} 
+            handleSubmit={handleSubmit} 
+            handleChange={handleChange} 
+            setPlastic={setThePlastic}/>
         </div>
     )
 }

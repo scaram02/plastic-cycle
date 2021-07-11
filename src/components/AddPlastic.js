@@ -24,6 +24,8 @@ const AddPlastic = ({blankPlastic}) => {
       ...plastic,
       id: store.plastic.plastic.length + 1,
     });
+
+    setPlastic(blankPlastic)
   };
 
   const handleChange = e => {
@@ -34,6 +36,7 @@ const AddPlastic = ({blankPlastic}) => {
 
   return (
     <div>
+<h1>add</h1>
       <PlasticForm
         plastic={plastic}
         handleSubmit={handleSubmit}

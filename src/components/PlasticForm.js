@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const PlasticForm = ({ plastic, handleSubmit, handleChange, setPlastic }) => {
 
-console.log("plastic to edit", plastic)
+console.log("plastic on PlasticForom", plastic)
 
 useEffect(() => {
   setPlastic(plastic)
@@ -20,9 +20,9 @@ useEffect(() => {
         />
 
         <label htmlFor="usage">Type of Plastic</label>
-        <select name="usage" id="usage" onChange={handleChange}>
+        <select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''}>
           <option value="beverage bottle">beverage bottle</option>
-          <option value="food packaging">food packagine</option>
+          <option value="food packaging">food packaging</option>
           <option value="laundry and cleaning packaging">
             other packaging
           </option>
@@ -33,7 +33,7 @@ useEffect(() => {
         </select>
 
         <label htmlFor="occasion">Occasion</label>
-        <select name="occasion" id="occasion" onChange={handleChange}>
+        <select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''}>
           <option value="meal">On-the-go</option>
           <option value="work">Work</option>
           <option value="cooking">Cooking</option>
@@ -43,7 +43,7 @@ useEffect(() => {
         </select>
 
         <label htmlFor="typeOfPlastic">Type of Plastic</label>
-        <select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange}>
+        <select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''}>
           <option value="pet">PET(E)</option>
           <option value="hdpe">HDPE</option>
           <option value="ldpe">LDPE</option>

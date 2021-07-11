@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const PlasticList = ({toggleEdit}) => {
+
+    const dispatch = useDispatch();
+    const { removePlastic } = bindActionCreators(actionCreators, dispatch);
 
     const store = useSelector((state) => state.plastic.plastic);
 
@@ -18,6 +23,7 @@ const PlasticList = ({toggleEdit}) => {
                     <h2>name: {plastic.plasticName}</h2>
                     <p>type: {plastic.typeOfPlastic}</p>
                     <button onClick={() => toggleEdit(plastic)}>Edit</button>
+                    <button onClick={() => removePlastic(plastic)}>Remove plastic!</button>
                     </div>
                 ))}
 

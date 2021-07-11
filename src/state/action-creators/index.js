@@ -17,3 +17,12 @@ export const editPlastic = plastic => {
         })
     }
 }
+
+export const removePlastic = plastic => {
+    return dispatch => {
+        dispatch({
+            type: "removePlastic",
+            payload: plastic
+        })
+    }
+}

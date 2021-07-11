@@ -28,8 +28,10 @@ console.log('hmm,', plastic)
 
   return (
     <div className="App">
-      <AddPlastic blankPlastic={blankPlastic}/>
-      <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled}/>
+      {editEnabled?  <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled}/>
+      : <AddPlastic blankPlastic={blankPlastic}/> }
+      
+     
       <PlasticList toggleEdit={toggleEdit}/>
     </div>
   );
