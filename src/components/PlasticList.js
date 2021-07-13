@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
 import { useSelector, useDispatch } from "react-redux";
+import Button from '@material-ui/core/Button';
 
 
 const PlasticList = ({toggleEdit}) => {
@@ -22,8 +23,8 @@ const PlasticList = ({toggleEdit}) => {
                     <div key={plastic.id}>
                     <h2>name: {plastic.plasticName}</h2>
                     <p>type: {plastic.typeOfPlastic}</p>
-                    <button onClick={() => toggleEdit(plastic)}>Edit</button>
-                    <button onClick={() => removePlastic(plastic)}>Remove plastic!</button>
+                    <Button onClick={() => toggleEdit(plastic)}>Edit</Button>
+                    <Button color="secondary" onClick={() => removePlastic(plastic)}>Remove plastic!</Button>
                     </div>
                 ))}
 

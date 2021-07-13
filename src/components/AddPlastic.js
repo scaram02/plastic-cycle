@@ -14,7 +14,6 @@ const AddPlastic = ({blankPlastic}) => {
   const { addPlastic } = bindActionCreators(actionCreators, dispatch);
 
   const store = useSelector((state) => state);
-  console.log("this is the permanent store: ", store.plastic.plastic);
 
   const handleSubmit = e => {
     e.preventDefault();
