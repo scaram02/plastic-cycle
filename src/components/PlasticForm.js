@@ -7,8 +7,21 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
+
+
 const PlasticForm = ({ plastic, handleSubmit, handleChange, setPlastic }) => {
 
+  const classes = useStyles();
 console.log("plastic on PlasticForom", plastic)
 
 useEffect(() => {
@@ -17,7 +30,7 @@ useEffect(() => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <FormControl className={classes.formControl} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="name this"
@@ -26,41 +39,41 @@ useEffect(() => {
           onChange={handleChange}
         />
 
-        <label htmlFor="usage">Type of Plastic</label>
-        <select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''}>
-          <option value="beverage bottle">beverage bottle</option>
-          <option value="food packaging">food packaging</option>
-          <option value="laundry and cleaning packaging">
+        <InputLabel htmlFor="usage">Type of Plastic</InputLabel>
+        <Select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''}>
+          <MenuItem value="beverage bottle">beverage bottle</MenuItem>
+          <MenuItem value="food packaging">food packaging</MenuItem>
+          <MenuItem value="laundry and cleaning packaging">
             other packaging
-          </option>
-          <option value="cosmetics">cosmetics</option>
-          <option value="plastic bags">plastic bags</option>
-          <option value="styrofoam">styrofoam</option>
-          <option value="other">other</option>
-        </select>
+          </MenuItem>
+          <MenuItem value="cosmetics">cosmetics</MenuItem>
+          <MenuItem value="plastic bags">plastic bags</MenuItem>
+          <MenuItem value="styrofoam">styrofoam</MenuItem>
+          <MenuItem value="other">other</MenuItem>
+        </Select>
 
-        <label htmlFor="occasion">Occasion</label>
-        <select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''}>
-          <option value="meal">On-the-go</option>
-          <option value="work">Work</option>
-          <option value="cooking">Cooking</option>
-          <option value="special occasion">Special occasion</option>
-          <option value="cleaning">Cleaning</option>
-          <option value="everyday use">Everyday use</option>
-        </select>
+        <InputLabel htmlFor="occasion">Occasion</InputLabel>
+        <Select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''}>
+          <MenuItem value="meal">On-the-go</MenuItem>
+          <MenuItem value="work">Work</MenuItem>
+          <MenuItem value="cooking">Cooking</MenuItem>
+          <MenuItem value="special occasion">Special occasion</MenuItem>
+          <MenuItem value="cleaning">Cleaning</MenuItem>
+          <MenuItem value="everyday use">Everyday use</MenuItem>
+        </Select>
 
-        <label htmlFor="typeOfPlastic">Type of Plastic</label>
-        <select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''}>
-          <option value="pet">PET(E)</option>
-          <option value="hdpe">HDPE</option>
-          <option value="ldpe">LDPE</option>
-          <option value="pvc">PVC</option>
-          <option value="pp">PP</option>
-          <option value="styrofoam">Styrofoam</option>
-        </select>
+        <InputLabel htmlFor="typeOfPlastic">Type of Plastic</InputLabel>
+        <Select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''}>
+          <MenuItem value="pet">PET(E)</MenuItem>
+          <MenuItem value="hdpe">HDPE</MenuItem>
+          <MenuItem value="ldpe">LDPE</MenuItem>
+          <MenuItem value="pvc">PVC</MenuItem>
+          <MenuItem value="pp">PP</MenuItem>
+          <MenuItem value="styrofoam">Styrofoam</MenuItem>
+        </Select>
 
         <button>Add new plastic</button>
-      </form>
+      </FormControl>
     </div>
   );
 };
