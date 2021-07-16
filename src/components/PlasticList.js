@@ -3,12 +3,11 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
 import { useSelector, useDispatch } from "react-redux";
 import Button from '@material-ui/core/Button';
-
+import PlasticCard from './PlasticCard'
 
 const PlasticList = ({toggleEdit}) => {
 
     const dispatch = useDispatch();
-    const { removePlastic } = bindActionCreators(actionCreators, dispatch);
 
     const store = useSelector((state) => state.plastic.plastic);
 
@@ -20,12 +19,7 @@ const PlasticList = ({toggleEdit}) => {
     return (
         <div>
                 {store && store.map((plastic) => (
-                    <div key={plastic.id}>
-                    <h2>name: {plastic.plasticName}</h2>
-                    <p>type: {plastic.typeOfPlastic}</p>
-                    <Button onClick={() => toggleEdit(plastic)}>Edit</Button>
-                    <Button color="secondary" onClick={() => removePlastic(plastic)}>Remove plastic!</Button>
-                    </div>
+                    <PlasticCard plastic={plastic} key={plastic.id} toggleEdit={toggleEdit}/>
                 ))}
 
         </div>

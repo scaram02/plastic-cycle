@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import { FormGroup } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { InputBase } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -30,8 +33,11 @@ useEffect(() => {
 
   return (
     <div>
-      <FormControl className={classes.formControl} onSubmit={handleSubmit}>
-        <input
+      {/* <FormControl className={classes.formControl} onSubmit={handleSubmit}> */}
+      <form onSubmit={handleSubmit} className={classes.formControl} >
+
+
+        <TextField
           type="text"
           placeholder="name this"
           name="plasticName"
@@ -51,7 +57,8 @@ useEffect(() => {
           <MenuItem value="styrofoam">styrofoam</MenuItem>
           <MenuItem value="other">other</MenuItem>
         </Select>
-
+   
+   
         <InputLabel htmlFor="occasion">Occasion</InputLabel>
         <Select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''}>
           <MenuItem value="meal">On-the-go</MenuItem>
@@ -61,6 +68,7 @@ useEffect(() => {
           <MenuItem value="cleaning">Cleaning</MenuItem>
           <MenuItem value="everyday use">Everyday use</MenuItem>
         </Select>
+   
 
         <InputLabel htmlFor="typeOfPlastic">Type of Plastic</InputLabel>
         <Select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''}>
@@ -72,8 +80,12 @@ useEffect(() => {
           <MenuItem value="styrofoam">Styrofoam</MenuItem>
         </Select>
 
-        <button>Add new plastic</button>
-      </FormControl>
+        <Button  color="secondary"
+        type="submit"
+        variant="contained"
+        fullWidth>Add new plastic</Button>
+      {/* </FormControl> */}
+      </form>
     </div>
   );
 };
