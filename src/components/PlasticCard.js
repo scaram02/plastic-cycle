@@ -13,6 +13,7 @@ const PlasticCard = ({plastic, toggleEdit}) => {
     return (
         <div>
             <h1>Name: {plastic.plasticName}</h1>
+            <p>Usage: {plastic.usage}</p>
             <p>Type: {plastic.typeOfPlastic}</p>
             <Button onClick={() => toggleEdit(plastic)}>Edit</Button>
             <Button color="secondary" onClick={() => removePlastic(plastic)}>Remove plastic!</Button>

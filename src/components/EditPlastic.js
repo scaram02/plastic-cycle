@@ -36,7 +36,7 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
         setThePlastic({...thePlastic, [name]: value})
     }
 
-    console.log("the  plastic ur gonna edit", thePlastic)
+    const buttonText = 'Save edit'
 
     return (
         <div>
@@ -45,7 +45,9 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
             plastic={thePlastic} 
             handleSubmit={handleSubmit} 
             handleChange={handleChange} 
-            setPlastic={setThePlastic}/>
+            setPlastic={setThePlastic}
+            buttonText={buttonText}
+            />
         </div>
     )
 }

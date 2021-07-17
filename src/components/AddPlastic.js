@@ -33,6 +33,10 @@ const AddPlastic = ({blankPlastic}) => {
     setPlastic({ ...plastic, [name]: value });
   };
 
+  const buttonText = 'Add new plastic'
+
+
+
   return (
     <div>
 <h1>add</h1>
@@ -41,6 +45,7 @@ const AddPlastic = ({blankPlastic}) => {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         setPlastic={setPlastic}
+        buttonText={buttonText}
       />
     </div>
   );

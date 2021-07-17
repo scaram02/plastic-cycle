@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const PlasticForm = ({ plastic, handleSubmit, handleChange, setPlastic }) => {
+const PlasticForm = ({ plastic, handleSubmit, handleChange, setPlastic, buttonText }) => {
 
   const classes = useStyles();
 console.log("plastic on PlasticForom", plastic)
@@ -45,7 +45,7 @@ useEffect(() => {
           onChange={handleChange}
         />
 
-        <InputLabel htmlFor="usage">Type of Plastic</InputLabel>
+        <InputLabel htmlFor="usage">Usage</InputLabel>
         <Select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''}>
           <MenuItem value="beverage bottle">beverage bottle</MenuItem>
           <MenuItem value="food packaging">food packaging</MenuItem>
@@ -83,7 +83,7 @@ useEffect(() => {
         <Button  color="secondary"
         type="submit"
         variant="contained"
-        fullWidth>Add new plastic</Button>
+        fullWidth>{buttonText}</Button>
       {/* </FormControl> */}
       </form>
     </div>
