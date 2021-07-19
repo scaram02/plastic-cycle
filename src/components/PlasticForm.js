@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
-  },
+  }
 }));
 
 
@@ -31,9 +31,9 @@ useEffect(() => {
 
   return (
     <div>
-      {/* <FormControl className={classes.formControl} onSubmit={handleSubmit}> */}
+  
       <form onSubmit={handleSubmit} className={classes.formControl} >
-
+    {/* <FormControl className={classes.formControl} onSubmit={handleSubmit}> */}
 
         <TextField
           type="text"
@@ -78,13 +78,16 @@ useEffect(() => {
           <MenuItem value="styrofoam">Styrofoam</MenuItem>
         </Select>
 
-        <Button color="secondary"
+        <Button 
+        color="secondary"
         type="submit"
         variant="contained"
+        size='medium'
         fullWidth>{buttonText}
        </Button>
-      {/* </FormControl> */}
+   {/* </FormControl> */}
       </form>
+   
     </div>
   );
 };
