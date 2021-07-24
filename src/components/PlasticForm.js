@@ -13,9 +13,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  }
+  menu: {
+    marginTop: 30
+  },
+  // selectEmpty: {
+  //   marginTop: theme.spacing(2),
+  // }
 }));
 
 
@@ -36,6 +39,7 @@ useEffect(() => {
     {/* <FormControl className={classes.formControl} onSubmit={handleSubmit}> */}
 
         <TextField
+          // className={classes.menu}
           type="text"
           placeholder="name this"
           name="plasticName"
@@ -43,8 +47,8 @@ useEffect(() => {
           onChange={handleChange}
         />
 
-        <InputLabel htmlFor="usage">Usage</InputLabel>
-        <Select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''}>
+        <InputLabel htmlFor="usage" className={classes.menu}>Usage</InputLabel>
+        <Select name="usage" id="usage" onChange={handleChange} value={plastic.usage || ''} >
           <MenuItem value="beverage bottle">beverage bottle</MenuItem>
           <MenuItem value="food packaging">food packaging</MenuItem>
           <MenuItem value="laundry and cleaning packaging">
@@ -57,8 +61,8 @@ useEffect(() => {
         </Select>
    
    
-        <InputLabel htmlFor="occasion">Occasion</InputLabel>
-        <Select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''}>
+        <InputLabel htmlFor="occasion" className={classes.menu}>Occasion</InputLabel>
+        <Select name="occasion" id="occasion" onChange={handleChange} value={plastic.occasion || ''} >
           <MenuItem value="meal">On-the-go</MenuItem>
           <MenuItem value="work">Work</MenuItem>
           <MenuItem value="cooking">Cooking</MenuItem>
@@ -68,8 +72,8 @@ useEffect(() => {
         </Select>
    
 
-        <InputLabel htmlFor="typeOfPlastic">Type of Plastic</InputLabel>
-        <Select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''}>
+        <InputLabel htmlFor="typeOfPlastic" className={classes.menu}>Type of Plastic</InputLabel>
+        <Select name="typeOfPlastic" id="typeOfPlastic" onChange={handleChange} value={plastic.typeOfPlastic || ''} >
           <MenuItem value="pet">PET(E)</MenuItem>
           <MenuItem value="hdpe">HDPE</MenuItem>
           <MenuItem value="ldpe">LDPE</MenuItem>
@@ -79,6 +83,7 @@ useEffect(() => {
         </Select>
 
         <Button 
+        className={classes.menu}
         color="secondary"
         type="submit"
         variant="contained"

@@ -24,7 +24,7 @@ const App = () => {
     setPlastic(plastic)
     
   }
-console.log('hmm,', plastic)
+
 
   return (
     <div className="App">
