@@ -1,0 +1,1 @@
+export const plasticTypes = ["beverage bottle", "food packaging", "laundry and cleaning", "cosmetics", "plastic bags", 'styrofoam', 'other']
