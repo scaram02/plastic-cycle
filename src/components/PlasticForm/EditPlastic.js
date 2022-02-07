@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import PlasticForm from "./PlasticForm";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../state/index";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import PlasticForm from "./PlasticForm";
+import { actionCreators } from "../../state/index";
+import { bindActionCreators } from "redux";
 
 const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
 
@@ -24,15 +24,11 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
         setEditEnabled(false)
 
 
-        editPlastic(thePlastic, thePlastic.id) // ???
-
-        //setThePlastic?
+        editPlastic(thePlastic, thePlastic.id) 
     }
 
     const handleChange = e => {
         const { name, value } = e.target;
-      console.log('gret value', value)
-        // somethign mroe here
         setThePlastic({...thePlastic, [name]: value})
     }
 

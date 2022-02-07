@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
-import { bindActionCreators } from "redux";
+import React from "react";
 import { actionCreators } from "../state/index";
-import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
 
 const PlasticCard = ({plastic, toggleEdit}) => {
 

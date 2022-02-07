@@ -1,0 +1,1 @@
+export const occasions = ["on the go", "work", "cooking", "special occasion", "cleaning", "everyday use"]

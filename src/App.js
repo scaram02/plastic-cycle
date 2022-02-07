@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react'
-import AddPlastic from './components/AddPlastic'
-import EditPlastic from './components/EditPlastic';
-import PlasticList from './components/PlasticList'
-
 import './App.css';
+
+import React, {useEffect, useState} from 'react'
+
+import AddPlastic from './components/PlasticForm/AddPlastic'
+import EditPlastic from './components/PlasticForm/EditPlastic';
+import PlasticList from './components/PlasticList'
 
 const App = () => {
 

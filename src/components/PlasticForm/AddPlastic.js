@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import PlasticForm from "./PlasticForm";
+import { actionCreators } from "../../state/index";
 import { bindActionCreators } from "redux";
-import { actionCreators } from "../state/index";
-import { useSelector, useDispatch } from "react-redux";
 
 const AddPlastic = ({blankPlastic}) => {
 
@@ -18,6 +19,7 @@ const AddPlastic = ({blankPlastic}) => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    if (!plastic.plasticName || !plastic.usage || !plastic.occasion || !plastic.typeOfPlastic) return;
 
     addPlastic({
       ...plastic,

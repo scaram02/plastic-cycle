@@ -1,0 +1,1 @@
+export const plasticTypes = ["PET", "HDPE", "LDPE", "PVC", "PP", 'styrofoam', 'other/unknown']
