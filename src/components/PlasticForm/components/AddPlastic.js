@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import PlasticForm from "./PlasticForm";
-import { actionCreators } from "../../state/index";
+import { actionCreators } from "../../../state/index";
 import { bindActionCreators } from "redux";
 
 const AddPlastic = ({blankPlastic}) => {

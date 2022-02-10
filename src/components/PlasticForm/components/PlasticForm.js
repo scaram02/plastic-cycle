@@ -7,9 +7,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import {occasions} from '../../dataTypes/occasions'
-import {plasticTypes} from '../../dataTypes/plasticTypes'
-import {plasticUses} from '../../dataTypes/plasticUses'
+import {occasions} from '../../../dataTypes/occasions'
+import {plasticTypes} from '../../../dataTypes/plasticTypes'
+import {plasticUses} from '../../../dataTypes/plasticUses'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -47,7 +47,7 @@ useEffect(() => {
           type="text"
           placeholder="name this"
           name="plasticName"
-          value={plastic.plasticName}
+          value={plastic.plasticName || ""}
           onChange={handleChange}
         />
 
