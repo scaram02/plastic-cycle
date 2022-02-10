@@ -2,28 +2,20 @@ import {
   ArgumentAxis,
   BarSeries,
   Chart,
-  LineSeries,
   ValueAxis
 } from "@devexpress/dx-react-chart-material-ui";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 import Paper from "@mui/material/Paper";
+import { useSelector } from "react-redux";
 
 const Graph = () => {
   // https://devexpress.github.io/devextreme-reactive/react/chart/docs/reference/bar-series/
 
   const store = useSelector((state) => state.plastic.plastic);
-  const sillyData = [
-    { argument: 'Monday', value: 30 },
-    { argument: 'Tuesday', value: 20 },
-    { argument: 'Wednesday', value: 10 },
-    { argument: 'Thursday', value: 50 },
-    { argument: 'Friday', value: 60 },
-  ];
+
   const [data, setData] = useState([]);
 
-  const hm = [1, 3, 5, 3, 1];
 
   const setOccasion = () => {
     const occasionCount =
@@ -46,7 +38,7 @@ const Graph = () => {
 
   }, [store]);
 
-console.log('LOOK HERE', data)
+
   
   return (
         <Paper>
