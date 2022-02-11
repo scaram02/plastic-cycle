@@ -5,7 +5,7 @@ import PlasticForm from "./PlasticForm";
 import { actionCreators } from "../../../state/index";
 import { bindActionCreators } from "redux";
 
-const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
+const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled, graphData, setGraphData}) => {
 
     const dispatch = useDispatch();
     const { editPlastic } = bindActionCreators(actionCreators, dispatch);
@@ -25,6 +25,7 @@ const EditPlastic = ({plasticToEdit, editEnabled, setEditEnabled}) => {
 
 
         editPlastic(thePlastic, thePlastic.id) 
+        // NEED TO SETGRAPHDATA Here
     }
 
     const handleChange = e => {

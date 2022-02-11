@@ -25,7 +25,7 @@ const App = () => {
   const [plastic, setPlastic] = useState(blankPlastic)
   const [editEnabled, setEditEnabled] = useState(false)
   const [displayText, setDisplayText] = useState(false)
-  
+  const [graphData, setGraphData] = useState([]); 
 
   const toggleEdit = plastic => {
     setEditEnabled(!editEnabled)
@@ -41,21 +41,15 @@ const App = () => {
      // something
    }
   }
-
-
+console.log('graph data', graphData)
   return (
     <div className="App">
-      <>
-       {/* <Routes>
-        <Route path="/list" element={<Graph/>}/>
-      </Routes> */}
-      </>
 
-      <Dashboard toggleEdit={toggleEdit}/>
+      <Dashboard toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData}/>
 
-  <h1 onClick={toggleShowForm}>dfghjkm,.</h1>
+  <h1 onClick={toggleShowForm}>show/hide.</h1>
   <div style={{display: displayText? "block" : "none"}}>
-      {editEnabled?  <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled}/>
+      {editEnabled?  <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled} graphData={graphData} setGraphData={setGraphData}/>
       : <AddPlastic blankPlastic={blankPlastic}/>}
  </div>
   

@@ -3,15 +3,15 @@ import React, {useEffect, useState} from 'react'
 import Graph from '../Graph'
 import PlasticList from '../PlasticList';
 
-const Dashboard = ({toggleEdit}) => {
+const Dashboard = ({toggleEdit, graphData, setGraphData}) => {
 
 
 
 
     return (
         <div>
-            <Graph/>
-            <PlasticList toggleEdit={toggleEdit}/>  
+            <Graph  graphData={graphData} setGraphData={setGraphData}/>
+            <PlasticList toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData}/>  
            
         </div>
     )

@@ -2,57 +2,56 @@ import {
   ArgumentAxis,
   BarSeries,
   Chart,
-  ValueAxis
+  ValueAxis,
 } from "@devexpress/dx-react-chart-material-ui";
 import React, { useEffect, useState } from "react";
 
 import Paper from "@mui/material/Paper";
 import { useSelector } from "react-redux";
 
-const Graph = () => {
+const Graph = ({ graphData, setGraphData }) => {
   // https://devexpress.github.io/devextreme-reactive/react/chart/docs/reference/bar-series/
 
   const store = useSelector((state) => state.plastic.plastic);
 
-  const [data, setData] = useState([]);
-
-
   const setOccasion = () => {
     const occasionCount =
-    (store.length > 0) &&
-    store
-      .map((p) => p.occasion)
-      .reduce((a, e) => {
-        a[e] = a[e] ? a[e] + 1 : 1;
-        return a;
-      }, {});
+      store.length > 0 &&
+      store
+        .map((p) => p.occasion)
+        .reduce((a, e) => {
+          a[e] = a[e] ? a[e] + 1 : 1;
+          return a;
+        }, {});
+    // {cooking: 2, work: 1}
 
-      for (var occ in occasionCount) {
-          console.log('hm')
-       setData([...data, {argument: occ, value: occasionCount[occ]}])
-      }
+    for (var occ in occasionCount) {
+      
+        // remove all objs with same occ,  just use the one with the final count and setgraphdata to it
+      setGraphData([
+        ...graphData.filter((d) => d.argument !== occ),
+        { argument: occ, value: occasionCount[occ] },
+      ]);
+    }
   };
 
-  useEffect(() => {
-   setOccasion()
 
+  useEffect(() => {
+    setOccasion();
   }, [store]);
 
-
-  
   return (
-        <Paper>
-          <Chart data={data}>
-            <ArgumentAxis />
-            <ValueAxis />
-            <BarSeries
-              valueField="value"
-              argumentField="argument"
-              color="hotPink"
-            />
-          </Chart>
-        </Paper>
-
+    <Paper>
+      <Chart data={graphData}>
+        <ArgumentAxis />
+        <ValueAxis />
+        <BarSeries
+          valueField="value"
+          argumentField="argument"
+          color="hotPink"
+        />
+      </Chart>
+    </Paper>
   );
 };
 
