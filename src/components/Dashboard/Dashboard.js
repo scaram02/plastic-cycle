@@ -8,10 +8,11 @@ const Dashboard = ({toggleEdit, graphData, setGraphData}) => {
 
 
 
+
     return (
         <div>
-            <Graph  graphData={graphData} setGraphData={setGraphData}/>
-            <PlasticList toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData}/>  
+            <Graph  graphData={graphData} setGraphData={setGraphData} />
+            <PlasticList toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData} />  
            
         </div>
     )

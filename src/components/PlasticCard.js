@@ -8,6 +8,14 @@ const PlasticCard = ({ plastic, toggleEdit, graphData, setGraphData }) => {
   const dispatch = useDispatch();
   const { removePlastic } = bindActionCreators(actionCreators, dispatch);
 
+  const removeFromGraph = plastic => {
+
+    const f = graphData.filter((d) => d.argument !== plastic.occasion)
+    const n = graphData.map((d) => d.argument === plastic.occasion? d.value -= 1 : d.value)
+// fix this, it removes multiple instances from graph
+    setGraphData([...f, {argument: plastic.occasion, value: n}])
+    removePlastic(plastic)
+  }
  
   
   return (
@@ -20,7 +28,7 @@ const PlasticCard = ({ plastic, toggleEdit, graphData, setGraphData }) => {
       <Button
         color="secondary"
         onClick={
-          () => removePlastic(plastic)
+          () => removeFromGraph(plastic)
         }
       >
         Remove plastic!

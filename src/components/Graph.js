@@ -14,6 +14,8 @@ const Graph = ({ graphData, setGraphData }) => {
 
   const store = useSelector((state) => state.plastic.plastic);
 
+  const [count, setCount] = useState({})
+
   const setOccasion = () => {
     const occasionCount =
       store.length > 0 &&
@@ -23,11 +25,12 @@ const Graph = ({ graphData, setGraphData }) => {
           a[e] = a[e] ? a[e] + 1 : 1;
           return a;
         }, {});
+        setCount(occasionCount)
+      
     // {cooking: 2, work: 1}
 
     for (var occ in occasionCount) {
-      
-        // remove all objs with same occ,  just use the one with the final count and setgraphdata to it
+      // remove all objs with same occ,  just use the one with the final count and setgraphdata to it
       setGraphData([
         ...graphData.filter((d) => d.argument !== occ),
         { argument: occ, value: occasionCount[occ] },
@@ -35,23 +38,26 @@ const Graph = ({ graphData, setGraphData }) => {
     }
   };
 
+  console.log(" THE count", count);
+
+
 
   useEffect(() => {
     setOccasion();
   }, [store]);
-
+console.log('stre', store)
   return (
+      <div>
+      { !graphData ? <p>nothing yet</p> : 
     <Paper>
       <Chart data={graphData}>
         <ArgumentAxis />
         <ValueAxis />
-        <BarSeries
-          valueField="value"
-          argumentField="argument"
-          color="hotPink"
-        />
+        <BarSeries valueField="value" argumentField="argument" color="hotPink"  />
       </Chart>
     </Paper>
+      }
+      </div>
   );
 };
 

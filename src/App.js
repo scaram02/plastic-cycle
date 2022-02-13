@@ -32,24 +32,28 @@ const App = () => {
     setPlastic(plastic)
     
   }
-
+ 
   const toggleShowForm = () => {
     
    setDisplayText(!displayText)
 
-   if (displayText) {
-     // something
-   }
   }
+
+
+
+
+
+  
 console.log('graph data', graphData)
-  return (
+  
+return (
     <div className="App">
 
-      <Dashboard toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData}/>
+      <Dashboard toggleEdit={toggleEdit} graphData={graphData} setGraphData={setGraphData} />
 
   <h1 onClick={toggleShowForm}>show/hide.</h1>
   <div style={{display: displayText? "block" : "none"}}>
-      {editEnabled?  <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled} graphData={graphData} setGraphData={setGraphData}/>
+      {editEnabled?  <EditPlastic plasticToEdit={plastic} editEnabled={editEnabled} setEditEnabled={setEditEnabled} graphData={graphData} setGraphData={setGraphData} />
       : <AddPlastic blankPlastic={blankPlastic}/>}
  </div>
   

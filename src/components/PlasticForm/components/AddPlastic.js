@@ -19,7 +19,7 @@ const AddPlastic = ({blankPlastic}) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!plastic.plasticName || !plastic.usage || !plastic.occasion || !plastic.typeOfPlastic) return;
+    // if (!plastic.plasticName || !plastic.usage || !plastic.occasion || !plastic.typeOfPlastic) return;
 
     addPlastic({
       ...plastic,

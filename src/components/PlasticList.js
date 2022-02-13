@@ -2,13 +2,11 @@ import PlasticCard from "./PlasticCard";
 import React from "react";
 import { useSelector } from "react-redux";
 
-const PlasticList = ({ toggleEdit, graphData, setGraphData }) => {
+const PlasticList = ({ toggleEdit, graphData, setGraphData}) => {
 
   const store = useSelector((state) => state.plastic.plastic);
 
   
-
-  console.log(graphData)
 
   return (
     <div>
@@ -20,6 +18,7 @@ const PlasticList = ({ toggleEdit, graphData, setGraphData }) => {
             toggleEdit={toggleEdit}
             graphData={graphData}
             setGraphData={setGraphData}
+           
           />
         ))}
     </div>
