@@ -10,10 +10,9 @@ const PlasticCard = ({ plastic, toggleEdit, graphData, setGraphData }) => {
 
   const removeFromGraph = plastic => {
 
-    const f = graphData.filter((d) => d.argument !== plastic.occasion)
-    const n = graphData.map((d) => d.argument === plastic.occasion? d.value -= 1 : d.value)
-// fix this, it removes multiple instances from graph
-    setGraphData([...f, {argument: plastic.occasion, value: n}])
+    const o = graphData.map((p) => p.argument === plastic.occasion? {argument: p.argument, value: p.value -=1} : {argument: p.argument, value: p.value})
+    
+    setGraphData(o)
     removePlastic(plastic)
   }
  

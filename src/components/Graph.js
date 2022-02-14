@@ -53,7 +53,7 @@ console.log('stre', store)
       <Chart data={graphData}>
         <ArgumentAxis />
         <ValueAxis />
-        <BarSeries valueField="value" argumentField="argument" color="hotPink"  />
+        <BarSeries valueField="value" argumentField="argument" color="hotPink" barWidth=".25" />
       </Chart>
     </Paper>
       }

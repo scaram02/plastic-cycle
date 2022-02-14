@@ -26,7 +26,8 @@ const App = () => {
   const [editEnabled, setEditEnabled] = useState(false)
   const [displayText, setDisplayText] = useState(false)
   const [graphData, setGraphData] = useState([]); 
-
+// to do: sort graph data alphabetically so no order change upon change
+  
   const toggleEdit = plastic => {
     setEditEnabled(!editEnabled)
     setPlastic(plastic)
